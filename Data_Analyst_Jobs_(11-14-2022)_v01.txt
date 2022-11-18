@@ -1,8 +1,9 @@
-I use this data from Kaggle https://www.kaggle.com/datasets/intelai/data-analysis-jobs which is titled as Data Analysis Jobs, a dataset from  MUHAMMAD ABDULAZIZ.
+I use this data from Kaggle https://www.kaggle.com/datasets/intelai/data-analysis-jobs which is titled as Data Analysis Jobs, a dataset from  MUHAMMAD ABDULAZIZ. Dataset contains job postings available on the City of New York’s official jobs site.
 
 I am interested about the different business titles and sorted them by the average estimated salary 
 (this is a custom field I created by averaging the salary from and salary to)   
-in ascending order so I created  a query to answer this.
+in ascending order so I created  a query to answer this. I used BigQuery platform.
+
 "SELECT 
   Business_Title,
   AVG(Salary_Range_From) AS AVG_Salary_From,
@@ -21,6 +22,7 @@ But in the higher ranks, I can see a common thing to them which is being a high 
 
 In order to gain more insights,  instead of grouping them by business titles, 
 I grouped them by the agency so I can see which agency has the highest/lowest average expected salary. 
+
 "SELECT 
   Agency,
   AVG(Salary_Range_From) AS AVG_Salary_From,
@@ -31,6 +33,7 @@ FROM `analysis-phase-367609.Kaggle_dataset.data_analysis_jobs`
 WHERE Salary_Frequency='Annual' --excludes salary frequency of 'hourly'
 GROUP BY Agency
 ORDER BY AVG_Estimated_Salary "
+
 In the lower ranks we have the departments of Probation, Buildings, Police department, Law departments. 
 In the higher departments there are the Department of Correction, Department of sanitation, and Department of Transportation. 
 Honestly, I don't see any similarities of departments within each rank. 
