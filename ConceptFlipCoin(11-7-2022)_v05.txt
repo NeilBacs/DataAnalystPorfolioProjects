@@ -1,0 +1,60 @@
+'''Demonstration of rule of large numbers in dertermining the theoretical probability '''
+#We know that the probability of getting heads or tails on a fair coin is 0.5. That is the theoretical probability.
+
+import random
+choices=["heads","tails"]
+
+
+########################### Experiment 1: 10 trials
+e1heads=0
+e1tails=0
+
+for trial in range(10):
+    res=random.choice(choices)
+    if res =="heads":
+        e1heads+=1
+    else:
+        e1tails+=1
+
+
+############################ Experiment 2: trial of 1,000
+e2heads=0
+e2tails=0
+
+for trial in range(1000):
+    res = random.choice(choices)
+    if res == "heads":
+        e2heads += 1
+    else:
+        e2tails += 1
+
+############################ Experiment 3: trial of 1,000,000
+e3heads = 0
+e3tails = 0
+
+for trial in range(1000000):
+    res = random.choice(choices)
+    if res == "heads":
+        e3heads += 1
+    else:
+        e3tails += 1
+
+
+############################# Printing results
+
+print(f"Experimental probability of getting heads when the number of trial is 10:  {e1heads/10}")
+print(f"Experimental probability of getting heads when the number of trial is 1,000:  {e2heads/1000}")
+print(f"Experimental probability of getting heads when the number of trial is 1,000,000:  {e3heads/1000000}")
+
+'''Conclusions'''
+#As the number of trial increases, the closer its value to the theoretical probability.
+#As the number of trial increases, the degree of deviation between the values ,on each run decreases.
+
+'''Questions'''
+#Assuming that I don't know the theoretical probability, what factor should I consider in order to be confident that the number of trials is good enough to approximate the theoretical probability?
+#---My answer as of now (11/7/2022) is, I will be confident when the first two nonzero digits after the decimal point is consistent.
+#--------Example is in here , in 1,000,000 trials, the first two nonzero digits after the decimal point (in this case is the tenths and hundreths place) is not changing throughout the runs, the only changing is the thousandths place.
+#--------In that case I am confident with the trial number of 1,000,000
+
+
+
