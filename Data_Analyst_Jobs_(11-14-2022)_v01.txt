@@ -1,0 +1,38 @@
+I use this data from Kaggle https://www.kaggle.com/datasets/intelai/data-analysis-jobs which is titled as Data Analysis Jobs, a dataset from  MUHAMMAD ABDULAZIZ.
+
+I am interested about the different business titles and sorted them by the average estimated salary 
+(this is a custom field I created by averaging the salary from and salary to)   
+in ascending order so I created  a query to answer this.
+"SELECT 
+  Business_Title,
+  AVG(Salary_Range_From) AS AVG_Salary_From,
+  AVG(Salary_Range_To) AS AVG_Salary_To,
+  (AVG(Salary_Range_From) + AVG(Salary_Range_To))/2 AS AVG_Estimated_Salary
+ 
+FROM `analysis-phase-367609.Kaggle_dataset.data_analysis_jobs` 
+WHERE Salary_Frequency='Annual' --excludes salary frequency of 'hourly'
+GROUP BY Business_Title
+ORDER BY AVG_Estimated_Salary "
+
+In the lower rank ( in terms  of average estimated salary)
+I don't see any similarities because the business titles are ranging from 
+"Customer Service Representative, Help Desk Representative, Clerical Supervisor, Revenue analyst, Labor law investigator, Capital analyst and so on" 
+But in the higher ranks, I can see a common thing to them which is being a high position  ( Have Senior, Chief, Executive on business titles) , which is no surprise.
+
+In order to gain more insights,  instead of grouping them by business titles, 
+I grouped them by the agency so I can see which agency has the highest/lowest average expected salary. 
+"SELECT 
+  Agency,
+  AVG(Salary_Range_From) AS AVG_Salary_From,
+  AVG(Salary_Range_To) AS AVG_Salary_To,
+  (AVG(Salary_Range_From) + AVG(Salary_Range_To))/2 AS AVG_Estimated_Salary
+ 
+FROM `analysis-phase-367609.Kaggle_dataset.data_analysis_jobs` 
+WHERE Salary_Frequency='Annual' --excludes salary frequency of 'hourly'
+GROUP BY Agency
+ORDER BY AVG_Estimated_Salary "
+In the lower ranks we have the departments of Probation, Buildings, Police department, Law departments. 
+In the higher departments there are the Department of Correction, Department of sanitation, and Department of Transportation. 
+Honestly, I don't see any similarities of departments within each rank. 
+I can only hypothesize that maybe the role of analyst in the agencies in the higher rank is more integral compare to other agencies, thus they are compensated more and the average expected salary is bigger. 
+And also maybe there are more proportion of people with higher job title in higher ranked agencies compare to other agencies.
