@@ -1,4 +1,4 @@
-'''Demonstration of rule of large numbers in dertermining the theoretical probability '''
+'''Demonstration of the law of large numbers in dertermining the theoretical probability '''
 #We know that the probability of getting heads or tails on a fair coin is 0.5. That is the theoretical probability.
 
 import random
