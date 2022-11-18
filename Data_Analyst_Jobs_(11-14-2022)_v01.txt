@@ -29,7 +29,7 @@ I grouped them by the agency so I can see which agency has the highest/lowest av
   AVG(Salary_Range_To) AS AVG_Salary_To,
   (AVG(Salary_Range_From) + AVG(Salary_Range_To))/2 AS AVG_Estimated_Salary
  
-FROM `analysis-phase-367609.Kaggle_dataset.data_analysis_jobs` 
+FROM `analysis-phase-367609.Kaggle_dataset.data_analysis_jobs` --project name on my Bigquery account
 WHERE Salary_Frequency='Annual' --excludes salary frequency of 'hourly'
 GROUP BY Agency
 ORDER BY AVG_Estimated_Salary "
