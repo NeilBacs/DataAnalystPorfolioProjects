@@ -155,7 +155,7 @@ CREATE TEMPORARY TABLE aggregated_table AS -- it is easier to store the query on
 SELECT   *, 
 		(salary_range_From + salary_range_to)/2 AS estimated_salary
 FROM data_analyst_jobs
-WHERE salary_frequency="Annual" -- excludes salary frequency of 'hourly')
+WHERE salary_frequency="Annual" -- excludes salary frequency of 'hourly'
 UNION ALL -- there are two distinct values of expected salary "Annual" and "Hourly" So there is a need to adjust the salary on hourly first then UNION them
 SELECT   *,
 		((salary_range_from + salary_range_to)/2)*8*20*12 AS estimated_salary -- adjusted expected salary to annual
