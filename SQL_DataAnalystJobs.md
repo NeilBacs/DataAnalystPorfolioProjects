@@ -191,6 +191,7 @@ The five lowest average estimated salary are the:
 - Research Intern
 - Programs Intern
 - WSCP SUPPORT STAFF. 
+
 I can see similarities here, all job title seems to be entry levels.
 
 The five highest average estimated salary are the: 
@@ -199,6 +200,7 @@ The five highest average estimated salary are the:
 - Chief Technology Officer
 - Information Security Specialist
 - Executive Director
+
 I can see a common thing to them which is being in a high position  ( Have Comissioner, Chief, Executive, Director on business titles) , which is no surprise.
 
 In order to gain more insights, instead of grouping them by business titles, 
