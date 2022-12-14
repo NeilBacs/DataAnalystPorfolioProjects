@@ -30,7 +30,7 @@ CREATE TABLE data_analyst_jobs(
 	preferred_skills TEXT,		
 	additional_info TEXT,			
 	to_apply TEXT,			
-	hours_shift	TEXT,			
+	hours_shift TEXT,			
 	work_location_1	VARCHAR(255),	
 	recruitment_contact VARCHAR(255),		
 	residency_requirement TEXT,			
@@ -247,7 +247,7 @@ We can actualy test my second hypothesis by running the following query
 ``` sql
 SELECT DISTINCT job_id, 
 		business_title,
-        agency,
+        	agency,
 		estimated_salary
 FROM aggregated_table
 WHERE agency="DEPARTMENT OF CORRECTION"
@@ -263,7 +263,7 @@ Top 5 business title results in DEPARTMENT OF CORRECTION agency:
 
 SELECT DISTINCT job_id, 
 		business_title,
-        agency,
+       		agency,
 		estimated_salary
 FROM aggregated_table
 WHERE agency="NYC EMPLOYEES RETIREMENT SYS"
@@ -279,7 +279,7 @@ Top 5 business title results NYC EMPLOYEES RETIREMENT SYS agency:
 
 SELECT DISTINCT job_id, 
 		business_title,
-        agency,
+        	agency,
 		estimated_salary
 FROM aggregated_table
 WHERE agency="DEPARTMENT OF SANITATION"
@@ -295,7 +295,7 @@ Top 5 business title results in DEPARTMENT OF SANITATION agency:
 
 SELECT DISTINCT job_id, 
 		business_title,
-        agency,
+        	agency,
 		estimated_salary
 FROM aggregated_table
 WHERE agency="DEPARTMENT OF TRANSPORTATION"
@@ -311,7 +311,7 @@ Top 5 business title results in DEPARTMENT OF TRANSPORTATION agency:
 
 SELECT DISTINCT job_id, 
 		business_title,
-        agency,
+        	agency,
 		estimated_salary
 FROM aggregated_table
 WHERE agency="BOARD OF CORRECTION"
