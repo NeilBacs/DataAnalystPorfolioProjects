@@ -401,4 +401,4 @@ Top business title results in DEPARTMENT OF INVESTIGATION agency:
 */
 ```
 
-**From the result , we can say that it strongly supports my second hypothesis.**
+**We can infer from the result that my second hypothesis is substantially supported.**
