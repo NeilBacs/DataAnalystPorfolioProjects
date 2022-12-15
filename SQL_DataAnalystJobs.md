@@ -201,7 +201,7 @@ The five highest average estimated salary are the:
 - Information Security Specialist
 - Executive Director
 
-I can see a common thing to them which is being in a high position  ( Have Comissioner, Chief, Executive, Director on business titles) , which is no surprise.
+I can see a common thing to them which is being in a high position  ( Have Manager, Comissioner, Chief, Executive, Director on business titles) , which is no surprise.
 
 In order to gain more insights, instead of grouping them by business titles, 
 I grouped them by the agency so I can see which agency has the highest/lowest average expected salary. 
@@ -242,8 +242,9 @@ But I can hypothesize that
 - maybe the role of analyst in the agencies with the higher average estimated salary is more integral compare to other agencies, thus they are compensated more and the average expected salary is bigger. 
 - And also maybe there are more proportion of people with higher job title in agencies with high average estimated salary compare to other agencies.
 
-We can actualy test my second hypothesis by running the following query
+We can actualy test my second hypothesis by looking at the business titles who earn the most on each agency.
 
+Let's check first on the agencies with the top 5 average estimated salary.
 ``` sql
 SELECT DISTINCT job_id, 
 		business_title,
@@ -325,6 +326,79 @@ Top 5 business title results in DEPARTMENT OF TRANSPORTATION agency:
 -Director of Physical and Mental Wellbeing
 */
 
+```
+
+Now let's check on the agencies with the bottom 5 average estimated salary.
+```sql
+SELECT DISTINCT job_id, 
+		business_title,
+        	agency,
+		estimated_salary
+FROM aggregated_table
+WHERE agency="DISTRICT ATTORNEY RICHMOND COU"
+ORDER BY estimated_salary DESC;
+/*
+Top business title results in DISTRICT ATTORNEY RICHMOND COU agency:
+(Returned only 1 row)
+- Body Worn Camera Analyst
+*/
+
+
+SELECT DISTINCT job_id, 
+		business_title,
+        	agency,
+		estimated_salary
+FROM aggregated_table
+WHERE agency="DEPARTMENT OF PROBATION"
+ORDER BY estimated_salary DESC;
+/*
+Top business title results in DEPARTMENT OF PROBATION agency:
+(Returned only 2 rows)
+- Investigator Analyst
+- Human Resources Specialist
+*/
+
+
+SELECT DISTINCT job_id, 
+		business_title,
+        	agency,
+		estimated_salary
+FROM aggregated_table
+WHERE agency="DEPARTMENT OF BUILDINGS"
+ORDER BY estimated_salary DESC;
+/*
+Top business title results in DEPARTMENT OF BUILDINGS agency:
+(Returned only 1 row)
+- Budget Analyst
+*/
+
+SELECT DISTINCT job_id, 
+		business_title,
+        	agency,
+		estimated_salary
+FROM aggregated_table
+WHERE agency="ADMIN TRIALS AND HEARINGS"
+ORDER BY estimated_salary DESC;
+/*
+Top business title results in ADMIN TRIALS AND HEARINGS agency:
+(Returned only 1 row)
+- Procurement Analyst
+*/
+
+SELECT DISTINCT job_id, 
+		business_title,
+        	agency,
+		estimated_salary
+FROM aggregated_table
+WHERE agency="DEPARTMENT OF INVESTIGATION"
+ORDER BY estimated_salary DESC;
+/*
+Top business title results in DEPARTMENT OF INVESTIGATION agency:
+(Returned only 1 row)
+- Senior Programmer
+- Data Analyst
+- Policy Analystt
+*/
 ```
 
 From the result , we can say that it strongly supports my second hypothesis.
