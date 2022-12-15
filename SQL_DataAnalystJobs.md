@@ -204,7 +204,7 @@ The five highest average estimated salary are the:
 I can see a common thing to them which is being in a high position  ( Have Manager, Comissioner, Chief, Executive, Director on business titles) , which is no surprise.
 
 In order to gain more insights, instead of grouping them by business titles, 
-I grouped them by the agency so I can see which agency has the highest/lowest average expected salary. 
+I grouped them by the agency so I can see which agency has the highest/lowest average estimated salary. 
 
 ```sql
 SELECT DISTINCT job_id, 
