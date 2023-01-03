@@ -2,9 +2,9 @@
 
 ## Exploring the dataset using SQL
 
-I use this data from Kaggle [click here](https://www.kaggle.com/datasets/intelai/data-analysis-jobs) which is titled as Data Analysis Jobs, a dataset from  MUHAMMAD ABDULAZIZ. Dataset contains job postings available on the City of New York’s official jobs site.
+I use this data from Kaggle [click here](https://www.kaggle.com/datasets/intelai/data-analysis-jobs){:target="_blank"} which is titled as Data Analysis Jobs, a dataset from  MUHAMMAD ABDULAZIZ. Dataset contains job postings available on the City of New York’s official jobs site.
 
-### The platform the I've used is MySQL
+### The platform that I've used is MySQL
 
 I want to import the data which is in csv file into the MySQL platform. So the first step is to create Database and a table
 
@@ -192,7 +192,7 @@ The five lowest average estimated salary are the:
 - Programs Intern
 - WSCP SUPPORT STAFF. 
 
-I can see similarities here, all job title seems to be entry levels.
+I can see similarities here, all job title seems to be **entry levels**.
 
 The five highest average estimated salary are the: 
 - COMPUTER SYSTEMS MANAGER
@@ -201,7 +201,7 @@ The five highest average estimated salary are the:
 - Information Security Specialist
 - Executive Director
 
-I can see a common thing to them which is being in a high position  ( Have Manager, Comissioner, Chief, Executive, Director on business titles) , which is no surprise.
+I can see a common thing to them which is being in a **high position**  ( Have Manager, Comissioner, Chief, Executive, Director on business titles) , which is no surprise.
 
 In order to gain more insights, instead of grouping them by business titles, 
 I grouped them by the agency so I can see which agency has the highest/lowest average estimated salary. 
@@ -238,7 +238,7 @@ The five highest average estimated salary are the:
 - BOARD OF CORRECTION
 
 Honestly, I don't see any similarities of departments within lowest and highest. 
-But I can hypothesize that
+But I can **hypothesize** that
 - maybe the role of analyst in the agencies with the higher average estimated salary is more integral compare to other agencies, thus they are compensated more and the average expected salary is bigger. 
 - And also maybe there are more proportion of people with higher job title in agencies with high average estimated salary compare to other agencies.
 
