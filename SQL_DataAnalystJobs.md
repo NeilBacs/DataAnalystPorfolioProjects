@@ -185,7 +185,7 @@ ORDER BY estimated_salary;
 ```
 
 
-The five lowest average estimated salary are the: 
+The five **lowest** average estimated salary are the: 
 - College Aide
 - Computer Programmer Analyst College Aide
 - Research Intern
@@ -194,7 +194,7 @@ The five lowest average estimated salary are the:
 
 I can see similarities here, all job title seems to be **entry levels**.
 
-The five highest average estimated salary are the: 
+The five **highest** average estimated salary are the: 
 - COMPUTER SYSTEMS MANAGER
 - Assistant Commissioner
 - Chief Technology Officer
@@ -223,14 +223,14 @@ ORDER BY AVG(estimated_salary);
 
 ```
 
-The five lowest average estimated salary are the:
+The five **lowest** average estimated salary are the:
 - DISTRICT ATTORNEY RICHMOND COU
 - DEPARTMENT OF PROBATION
 - DEPARTMENT OF BUILDINGS
 - ADMIN TRIALS AND HEARINGS
 - DEPARTMENT OF INVESTIGATION
 
-The five highest average estimated salary are the: 
+The five **highest** average estimated salary are the: 
 - DEPARTMENT OF CORRECTION
 - NYC EMPLOYEES RETIREMENT SYS
 - DEPARTMENT OF SANITATION
