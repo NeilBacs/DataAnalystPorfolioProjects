@@ -2,7 +2,7 @@
 
 ## Exploring the dataset using SQL
 
-I use this data from Kaggle <a https://www.kaggle.com/datasets/intelai/data-analysis-jobs target="_blank"> click here </a> which is titled as Data Analysis Jobs, a dataset from  MUHAMMAD ABDULAZIZ. Dataset contains job postings available on the City of New York’s official jobs site.
+I use this data from Kaggle [click here](https://www.kaggle.com/datasets/intelai/data-analysis-jobs) which is titled as Data Analysis Jobs, a dataset from  MUHAMMAD ABDULAZIZ. Dataset contains job postings available on the City of New York’s official jobs site.
 
 ### The platform that I've used is MySQL
 
