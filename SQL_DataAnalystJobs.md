@@ -151,7 +151,7 @@ FROM data_analyst_jobs
 In order to properly analyze the salary, I need to have a consistent salary_frequency so I computed the "estimated_salary" (this is a custom field I created by averaging the salary_from and salary_to) of records with salary frequency of hourly to annual. 
  
  ```sql
-CREATE TEMPORARY TABLE aggregated_table AS -- it is easier to store the query on a table so it can easily be referenced
+CREATE TEMPORARY TABLE cleaned_table AS -- it is easier to store the query on a table so it can easily be referenced
 SELECT   *, 
 		(salary_range_From + salary_range_to)/2 AS estimated_salary
 FROM data_analyst_jobs
@@ -167,18 +167,16 @@ Now that I am comfortable with the table that I have, I can start querying from 
 I am interested to know what are the business_title present and how is the pay on each.
 
 ```sql
-SELECT DISTINCT job_id, -- when DISTINCT is not here, the rows being returned have duplicate like data but not really duplicate, the difference is the posting_type (External/Internal). So It is better to have a DISTINCT to remove duplicate like data.
-		business_title,
+SELECT DISTINCT  business_title,-- when DISTINCT is not here, the rows being returned have duplicate like data but not really duplicate, the difference is the posting_type (External/Internal). So It is better to have a DISTINCT to remove duplicate like data.
 		estimated_salary
-FROM aggregated_table
+FROM cleaned_table
 ORDER BY estimated_salary;
 
 /* To group the data by business title  */
 
-SELECT DISTINCT job_id, 
-		business_title,
+SELECT DISTINCT business_title,
 		AVG(estimated_salary)
-FROM aggregated_table
+FROM cleaned_table
 GROUP BY business_title
 ORDER BY estimated_salary;
 
@@ -207,17 +205,15 @@ In order to gain more insights, instead of grouping them by business titles,
 I grouped them by the agency so I can see which agency has the highest/lowest average estimated salary. 
 
 ```sql
-SELECT DISTINCT job_id, 
-		agency,
+SELECT DISTINCT agency,
 		estimated_salary
-FROM aggregated_table
+FROM cleaned_table
 ORDER BY estimated_salary;
 
 /*To group the data by agency */
-SELECT DISTINCT job_id, 
-		agency,
+SELECT DISTINCT agency,
 		AVG(estimated_salary)
-FROM aggregated_table
+FROM cleaned_table
 GROUP BY agency
 ORDER BY AVG(estimated_salary);
 
@@ -250,7 +246,7 @@ SELECT DISTINCT job_id,
 		business_title,
         	agency,
 		estimated_salary
-FROM aggregated_table
+FROM cleaned_table
 WHERE agency="DEPARTMENT OF CORRECTION"
 ORDER BY estimated_salary DESC;
 /*
@@ -266,7 +262,7 @@ SELECT DISTINCT job_id,
 		business_title,
        		agency,
 		estimated_salary
-FROM aggregated_table
+FROM cleaned_table
 WHERE agency="NYC EMPLOYEES RETIREMENT SYS"
 ORDER BY estimated_salary DESC;
 /*
@@ -282,7 +278,7 @@ SELECT DISTINCT job_id,
 		business_title,
         	agency,
 		estimated_salary
-FROM aggregated_table
+FROM cleaned_table
 WHERE agency="DEPARTMENT OF SANITATION"
 ORDER BY estimated_salary DESC;
 /*
@@ -298,7 +294,7 @@ SELECT DISTINCT job_id,
 		business_title,
         	agency,
 		estimated_salary
-FROM aggregated_table
+FROM cleaned_table
 WHERE agency="DEPARTMENT OF TRANSPORTATION"
 ORDER BY estimated_salary DESC;
 /*
@@ -314,7 +310,7 @@ SELECT DISTINCT job_id,
 		business_title,
         	agency,
 		estimated_salary
-FROM aggregated_table
+FROM cleaned_table
 WHERE agency="BOARD OF CORRECTION"
 ORDER BY estimated_salary DESC;
 /*
@@ -334,7 +330,7 @@ SELECT DISTINCT job_id,
 		business_title,
         	agency,
 		estimated_salary
-FROM aggregated_table
+FROM cleaned_table
 WHERE agency="DISTRICT ATTORNEY RICHMOND COU"
 ORDER BY estimated_salary DESC;
 /*
@@ -348,7 +344,7 @@ SELECT DISTINCT job_id,
 		business_title,
         	agency,
 		estimated_salary
-FROM aggregated_table
+FROM cleaned_table
 WHERE agency="DEPARTMENT OF PROBATION"
 ORDER BY estimated_salary DESC;
 /*
@@ -363,7 +359,7 @@ SELECT DISTINCT job_id,
 		business_title,
         	agency,
 		estimated_salary
-FROM aggregated_table
+FROM cleaned_table
 WHERE agency="DEPARTMENT OF BUILDINGS"
 ORDER BY estimated_salary DESC;
 /*
@@ -376,7 +372,7 @@ SELECT DISTINCT job_id,
 		business_title,
         	agency,
 		estimated_salary
-FROM aggregated_table
+FROM cleaned_table
 WHERE agency="ADMIN TRIALS AND HEARINGS"
 ORDER BY estimated_salary DESC;
 /*
@@ -389,7 +385,7 @@ SELECT DISTINCT job_id,
 		business_title,
         	agency,
 		estimated_salary
-FROM aggregated_table
+FROM cleaned_table
 WHERE agency="DEPARTMENT OF INVESTIGATION"
 ORDER BY estimated_salary DESC;
 /*
