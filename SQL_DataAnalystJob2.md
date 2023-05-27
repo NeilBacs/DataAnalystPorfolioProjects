@@ -29,8 +29,7 @@ WHERE salary_frequency='Hourly'; -- excludes salary_frequency of 'Annual'
 
  ```
  
- 
- ------- to be cont here
+
 
 Now that I am comfortable with the data that I have, I can start querying from it.
 I am interested to know what are the business_title present and how is the pay on each.
