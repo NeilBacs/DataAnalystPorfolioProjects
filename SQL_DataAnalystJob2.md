@@ -38,7 +38,6 @@ I am interested to know what are the business_title present and how is the pay o
 SELECT  DISTINCT business_title, estimated_salary
 FROM Unified_Salary
 ORDER BY estimated_salary;
-;
 
 /* To group the data by business title  */
 
